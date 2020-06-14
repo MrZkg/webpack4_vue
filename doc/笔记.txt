@@ -1,0 +1,31 @@
+https://juejin.im/post/5df2eed351882512664b0b54
+
+遇到问题
+1.  npm install babel-loader @babel-core @babel/preset-env -D
+    先安装babel-core -D
+2. htmlWebpackPlugin  参数问题
+   new copyWebpackPlugin({
+      patterns:[
+        {
+          from: path.resolve(__dirname, '../doc'),
+          to: path.resolve(__dirname, '../dist/doc')
+        }
+      ],
+      options:{
+
+      }
+    }),
+3.  build 后  需要 把 build 中 引入main.js路径前加 '.' 
+
+4. mode:'histtory' 时 刷新页面404 
+    在devServer下添加
+    historyApiFallback: {
+      index:''
+    }
+
+
+
+    
+
+
+

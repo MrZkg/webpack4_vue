@@ -1,0 +1,73 @@
+const mongodb = require("mongodb");
+const mongoClient = mongodb.MongoClient;// 属性，类型是一个对象。
+mongoClient.connect("mongodb://127.0.0.1:27017",{ useNewUrlParser: true },function (err,client) {
+    // 保证你的数据库是挂起状态
+    if(err){
+        console.log("连接数据库失败");
+    }else{
+        // 你要操作的数据库
+        const db = client.db("wang");
+        // 查找 一条或多条 5d44e4de34b9ad4848825441
+
+        // 根据ID进行查找时注意：需要将ID转为ObjectId格式   mongodb.ObjectId("xxxxxxxx")
+        // db.collection("score").findOne({_id:mongodb.ObjectId("5d44e4de34b9ad4848825441")},function (err,results) {
+        //     console.log(results);
+        // })
+
+
+        // db.collection("score").findOne({age:12},function (err,results) {
+        //     console.log(results);
+        // })
+
+
+
+
+        // countDocuments 传入的参数是条件，省略条件即无条件
+        // db.collection("score").countDocuments({age:12}).then(function (count) {
+        //     console.log(count);
+        // })
+        // db.collection("score").countDocuments().then(function (count) {
+        //     console.log(count);
+        // })
+        // db.collection("score").count().then(function (count) {
+        //     console.log(count);
+        // })
+
+        // skip sort limit  排序，skip limit
+        // db.collection("score").find().skip(1).limit(1).sort({age:-1}).toArray(function (err,results) {
+        //     if(err){
+        //         console.log("查找失败")
+        //     }else{
+        //         console.log("查找成功",results)
+        //     }
+        // })
+
+        // 带条件查找 注：不管你搜索出来的结果是几条，返回的结果均是数组
+        // db.collection("score").find({age:13}).toArray(function (err,results) {
+        //     if(err){
+        //         console.log("查找失败")
+        //     }else{
+        //         console.log("查找成功",results)
+        //     }
+        // })
+
+        // db.collection("score").find({userName:"张三"}).toArray(function (err,results) {
+        //     if(err){
+        //         console.log("查找失败")
+        //     }else{
+        //         console.log("查找成功",results)
+        //     }
+        // })
+
+        // 多条  查找所有结果
+        // find该方法传入的是条件，如果省略参数即是无条件。
+        // toArray 将返回的结果转为数组格式
+        // db.collection("score").find().toArray(function (err,results) {
+        //     if(err){
+        //         console.log("查找失败")
+        //     }else{
+        //         console.log("查找成功",results)
+        //     }
+        // })
+    }
+})
