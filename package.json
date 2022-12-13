@@ -43,7 +43,7 @@
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "core-js": "^2.6.11",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.5.8",
     "vue": "^2.6.11",
     "vue-router": "^3.3.1",
